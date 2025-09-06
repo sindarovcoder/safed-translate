@@ -1,0 +1,154 @@
+variables:
+  EXTERNAL_PORT: "30600"
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+default:
+  tags:
+    - shared-runner-1
+
+services:
+  - docker:20-dind
+
+cache:
+  key: ${CI_PROJECT_NAME}
+  paths:
+    - node_modules/
+    - .npm/
+
+before_script:
+  - apk add docker-cli bash
+
+after_script:
+  - echo "Cleaning up..."
+  - docker logout $CI_REGISTRY
+
+stages:
+  - build
+  - deploy
+
+build-prod:
+  stage: build
+  tags:
+    - baraka
+  variables:
+    DOCKER_HOST: unix:///var/run/docker.sock
+  script:
+    - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+    - docker build --build-arg ENV="$ENV_PROD" -t $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID} .
+    - docker tag $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID} $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest
+    - docker push $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID}
+  only:
+    refs:
+      - deploy_prod
+
+deploy-prod-b2c:
+  stage: deploy
+  tags:
+    - baraka
+  needs:
+    - build-prod
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "${DEPLOY_SSH_KEY}" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    # Docker login on the deploy host
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker login ${CI_REGISTRY} --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD}"
+
+    # Docker pull the latest image
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker pull ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID}"
+
+    # Check Docker service state before updating (useful for troubleshooting)
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker service inspect baraka_bot-b2c-prod"
+
+    # Update the service with the new image
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker service update --with-registry-auth --image ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID} baraka_bot-b2c-prod"
+
+    # Docker image prune to clean up unused images
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker image prune -f"
+  only:
+    refs:
+      - deploy_prod
+
+deploy-prod-p2c:
+  stage: deploy
+  tags:
+    - baraka
+  needs:
+    - build-prod
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "${DEPLOY_SSH_KEY}" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    # Docker login on the deploy host
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker login ${CI_REGISTRY} --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD}"
+
+    # Docker pull the latest image
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker pull ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID}"
+
+    # Check Docker service state before updating (useful for troubleshooting)
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker service inspect baraka_bot-p2c-prod"
+
+    # Update the service with the new image
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker service update --with-registry-auth --image ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID} baraka_bot-p2c-prod"
+
+    # Docker image prune to clean up unused images
+    - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker image prune -f"
+
+    # Check service logs for errors (add this to get more context on failures)
+    # - ssh -p $DEPLOY_SSH_PORT -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} "docker service logs baraka_bot-p2c-prod"
+  only:
+    refs:
+      - deploy_prod
+
+#### STAGING ####
+.build:
+  stage: build
+  before_script:
+    - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+  script:
+    - if [ -n "$ENV" ] && [ -f "$ENV" ]; then cp "$ENV" .env; fi
+    - docker build -t $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID} .
+    - docker tag $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID} $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:$ENV_TAG
+    - docker push $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_PIPELINE_IID}
+    - docker push $CI_REGISTRY/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:$ENV_TAG
+    - docker image prune -af
+
+.deploy:
+  stage: build
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk update && apk add openssh-client openssl )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $HOST >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh $USER@$HOST "cd /home/$USER/$CI_PROJECT_NAME && docker compose pull && docker compose up -d && docker system prune -af"
+
+build-staging:
+  extends: .build
+  variables:
+    ENV_TAG: staging
+    ENV: $ENV_STAGING
+  tags:
+    - shelluzb
+  only:
+    - staging
+
+deploy-staging:
+  extends: .deploy
+  only:
+    - staging
+  stage: deploy
+  tags:
+    - shelluzb
+  variables:
+    SSH_KEY: $SSH_KEY_STAGING
+    USER: $SSH_USER_STAGING
+    HOST: $SSH_HOST_STAGING

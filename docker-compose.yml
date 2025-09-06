@@ -1,0 +1,56 @@
+services:
+  baraka-bot-b2c:
+    container_name: baraka-bot-b2c
+    image: baraka-bot-prod:latest
+    restart: unless-stopped
+    build: .
+    ports:
+      - "3130:3130"
+    environment:
+      - NODE_ENV=production
+      - BOT_TYPE=B2C
+      - TZ=Asia/Tashkent
+      - TOKEN=7123015860:AAFKobV_mvz4M3bsPMmgHNYNXQdIz40J_sQ
+      - START_VIDEO_FILE_ID=BAACAgIAAxkBAAIE9maMvnyxsAklAtZwwozzafxGQGvnAALaTwACsSVpSC39FQ365BlZNQQ
+      - REGISTER_VIDEO_FILE_ID=BAACAgUAAxkBAAIEl2Z9RSZNPjvWgF5lXmAOb-pvePOXAAI4DwACsJrwV9sYOZ8itUWeNQQ
+      - BOT_NAME=Pochtabor
+      - API_URL=http://47.239.21.148:3000/api
+      - API_SECRET=8oI2iGZn6DscIUJUshO25QbOzBvJ
+      - WEBHOOK_URL=https://47.239.21.148:3130
+      - PORT=3130
+      - OSS_REGION=oss-cn-hangzhou
+      - OSS_ACCESS_KEY_ID=LTAI5tRXu6uJAgzTRwPq6EAo
+      - OSS_ACCESS_KEY_SECRET=isX1eiWm8mgSspp744ntMpdJG3dWk6
+      - OSS_BUCKET=baraka
+      - PAYME_MERCHAND_ID=66a354d5d94b4a4537dd678b
+      - PAYME_URL=https://checkout.paycom.uz/
+      - WEB_PAGE_URL=https://client.zhongwugou.com/
+    volumes:
+      - ./logs/baraka-bot/prod/b2c:/app/logs
+  baraka-bot-p2c:
+    container_name: baraka-bot-p2c
+    image: baraka-bot-prod:latest
+    restart: unless-stopped
+    build: .
+    ports:
+      - "3132:3132"
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Tashkent
+      - TOKEN=7156255019:AAHYizNM4t-byPVdxbv3jEDjqPRDFof053k
+      - BOT_NAME=Abusahiy TEZ
+      - API_URL=http://47.239.21.148:3000/api
+      - API_SECRET=8oI2iGZn6DscIUJUshO25QbOzBvJ
+      - WEBHOOK_URL=https://47.239.21.148:3132
+      - PORT=3132
+      - OSS_REGION=oss-cn-hangzhou
+      - OSS_ACCESS_KEY_ID=LTAI5tRXu6uJAgzTRwPq6EAo
+      - OSS_ACCESS_KEY_SECRET=isX1eiWm8mgSspp744ntMpdJG3dWk6
+      - OSS_BUCKET=baraka
+      - BOT_TYPE=P2C
+      - START_VIDEO_FILE_ID=BAACAgIAAxkBAAIHL2aOEX7syOWw7Mwmnii4dsBY0bb3AAK2TAAC4FdxSCMkgIcDb9XINQQ
+      - REGISTER_VIDEO_FILE_ID=BAACAgUAAxkBAAIEZ2Z9RQypfGz-ijSlJXdFc0sUH9wOAAI4DwACsJrwV4ovtZQkRkfMNQQ
+      - PAYME_MERCHAND_ID=66a354d5d94b4a4537dd678b
+      - PAYME_URL=https://checkout.paycom.uz/
+    volumes:
+      - ./logs/baraka-bot/prod/p2c:/app/logs

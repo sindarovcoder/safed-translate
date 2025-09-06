@@ -1,0 +1,56 @@
+services:
+  baraka-bot-b2c-staging:
+    container_name: baraka-bot-b2c-staging
+    image: baraka-bot-staging:latest
+    restart: unless-stopped
+    build: .
+    ports:
+      - "3131:3131"
+    environment:
+      - NODE_ENV=staging
+      - TZ=Asia/Tashkent
+      - TOKEN=6894573270:AAGTVmds5oI09zCkPKy1SfROBeRgMHih-aA
+      - BOT_NAME=Pochtabor (Test)
+      - API_URL=http://47.239.21.148:3001/api
+      - API_SECRET=8oI2iGZn6DscIUJUshO25QbOzBvJ
+      - WEBHOOK_URL=https://47.239.21.148:3131
+      - PORT=3131
+      - OSS_REGION=oss-cn-hangzhou
+      - OSS_ACCESS_KEY_ID=LTAI5tRXu6uJAgzTRwPq6EAo
+      - OSS_ACCESS_KEY_SECRET=isX1eiWm8mgSspp744ntMpdJG3dWk6
+      - OSS_BUCKET=baraka-dev
+      - BOT_TYPE=B2C
+      - START_VIDEO_FILE_ID=BAACAgIAAxkBAAIBJGbB2gxuAX4bERNEvUBR9891kSIZAALaTwACsSVpSH012OGhTqqANQQ
+      - REGISTER_VIDEO_FILE_ID=BBAACAgUAAxkBAAIBJ2bB2sQdtmp5UQFk-KDOLJIa3PBeAAI4DwACsJrwV1vke1UaPsVcNQQ
+      - PAYME_MERCHAND_ID=66a354d5d94b4a4537dd678b
+      - PAYME_URL=https://checkout.paycom.uz/
+      - WEB_PAGE_URL=https://staging.client.zhongwugou.com/
+    volumes:
+      - ./logs/baraka-bot/staging/b2c:/app/logs
+  baraka-bot-p2c-staging:
+    container_name: baraka-bot-p2c-staging
+    image: baraka-bot-staging:latest
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3133:3133"
+    environment:
+      - NODE_ENV=staging
+      - TZ=Asia/Tashkent
+      - TOKEN=7040678913:AAHrVuSE11aKRbc6ALGgzLmE2YI5poIFHog
+      - BOT_NAME=Abusahiy TEZ (Test)
+      - API_URL=http://47.239.21.148:3001/api
+      - API_SECRET=8oI2iGZn6DscIUJUshO25QbOzBvJ
+      - WEBHOOK_URL=https://47.239.21.148:3133
+      - PORT=3133
+      - OSS_REGION=oss-cn-hangzhou
+      - OSS_ACCESS_KEY_ID=LTAI5tRXu6uJAgzTRwPq6EAo
+      - OSS_ACCESS_KEY_SECRET=isX1eiWm8mgSspp744ntMpdJG3dWk6
+      - OSS_BUCKET=baraka-dev
+      - BOT_TYPE=P2C
+      - START_VIDEO_FILE_ID=BAACAgIAAxkBAAIBjWbB2d3FVhVQYyTRwDoMKWIgyCzaAALaTwACsSVpSDSqlat0g676NQQ
+      - REGISTER_VIDEO_FILE_ID=BAACAgUAAxkBAAIBkGbB2nwpRniobNJwsxmgEWbvRPc8AAI4DwACsJrwV5-m2R4btUkVNQQ
+      - PAYME_MERCHAND_ID=66a354d5d94b4a4537dd678b
+      - PAYME_URL=https://checkout.paycom.uz/
+    volumes:
+      - ./logs/baraka-bot/staging/p2c:/app/logs

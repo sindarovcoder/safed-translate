@@ -1,0 +1,256 @@
+{
+	"keyboard": {
+		"CREATE_ORDER": "🚚 Enter tracking number AUTO",
+		"SIMPLE_CREATE_ORDER": "🚚 Enter tracking number",
+		"MY_ORDERS": "📦 My orders",
+		"SEARCH_ORDER": "🔍 Order search",
+		"UN_PAID_ORDERS": "🔴 Unpaid orders",
+		"PAID_ORDERS": "🟢 Paid orders",
+		"COMMENT": "💬 Feedback",
+		"BANK_CARD_OR_CASH": "💵 Cash payment",
+		"ADDRESS": "🏠 My address",
+		"CHINA_ADDRESS": "🇨🇳 Our address in China",
+		"ADD_ADDRESS": "📱 Enter address",
+		"PAY": "💵 Payment",
+		"CALL_CENTER": "📞 Call center",
+		"OUR_ADDRESS": "🚩 Delivery address",
+		"DELETE_TRACKING": "✂️ Delete tracking",
+		"SELECT_BRANCH": "🚩 Select branch",
+		"PROFILE": "👤 Profile",
+		"REGISTER": "🔓 Log in",
+		"LOGIN": "🔓 Login",
+		"LOGOUT": "Log out ➡️",
+		"BACK": "🔙 Back",
+		"CHANGE_PVZ": "🔄 Change",
+		"MERGED_TRACK_NUMBERS": "Pay 💵",
+		"VIEW_ORDERS": "View Orders 📦",
+		"TRANSLATE": "keyboard.TRANSLATE",
+		"ADD_TO_GROUP": "keyboard.ADD_TO_GROUP",
+		"MY_LANG": "keyboard.MY_LANG",
+		"OCR": "keyboard.OCR"
+	},
+	"logout_successful": "Logout successful!",
+	"failed_operation": "An error occurred. Please press /start again.",
+	"registration_failed": "Registration failed: ",
+	"verification_code_error": "Incorrect SMS code. Please enter the code again:",
+	"login_successful": "Login successful!",
+	"login_failed": "Login failed! Please try again",
+	"address_add_failed": "Failed to add address! Please try again",
+	"waybill_not_found": "Waybill not found!",
+	"welcome_p2c": "Hello, welcome to the <b>{{botName}}</b> bot!\nPlease watch the video tutorial and log in.",
+	"welcome_b2c": "Hello, welcome to the <b>{{botName}}</b> bot!\nPlease watch the video tutorial and log in.",
+	"welcome_logged_p2c": "Hello {{name}}, welcome to the <b>{{botName}}</b> bot. Please select one of the following menu items!",
+	"welcome_logged_b2c": "Hello {{name}}, welcome to the <b>{{botName}}</b> bot. Please select one of the following menu items!",
+	"passport_no_error": "Passport series and number entered incorrectly. Please enter as in the example. For example: AC1234567",
+	"company_code_error": "Invitation code entered incorrectly. Please enter the 3-digit code again.",
+	"trackingNumber_error": "Tracking number entered incorrectly. Please enter a tracking number consisting of letters and numbers.",
+	"phone_number_error": "Phone number entered incorrectly. Please enter again. For example: 912345678",
+	"main_messeng": "You have returned to the main page, select the desired section.",
+	"error_message": "Invalid command entered. Please press /start again.",
+	"add": "➕ Add",
+	"address": {
+		"createdSuccess": "Registration successful!",
+		"defaultAddress": "🏠 Default address",
+		"name": "👤 Name: ",
+		"phone": "📱 Phone: ",
+		"address": "🏠 Address: ",
+		"createdAt": "📅 Created at: ",
+		"notFound": "Address not found!"
+	},
+	"auth": {
+		"registerSuccess": "Registration completed successfully!",
+		"loginSuccess": "Login successful!",
+		"profile": "👤 Profile:",
+		"code": "🆔 Code: <code>{{code}}</code>",
+		"name": "👤 Name: {{name}}",
+		"phoneNumber": "📱 Phone number: {{phoneNumber}}",
+		"passport": "🛂 Passport: <code>{{passportNo}}</code>",
+		"passportDates": "📅 Passport validity: {{passportEffectiveDate}} - {{passportExpireDate}}",
+		"registerAt": "📅 Registration date: {{createdAt}}"
+	},
+	"order": {
+		"createSuccess": "Order created successfully! Tracking number: {{trackingNumbers}}",
+		"notFound": "Order not found!",
+		"trackingNumber": "📦 Tracking number: <b><code>{{trackingNumber}}</code></b>",
+		"status": "📋 Status: <b>{{status}}</b>",
+		"receiver": "👤 Receiver: {{name}}",
+		"totalAmount": "💰 Total amount: <b>{{total}}</b> UZS",
+		"weight": "🏋️‍♂️ Weight: <b>{{weight}}</b> kg",
+		"freight": "💰 Freight: <b>{{freight}}</b> UZS",
+		"onlyWeight": "🏋️‍♂️ Weight: 0",
+		"onlyFreight": "💰 Freight: 0",
+		"packingType": "📦 Packing type: {{packingType}}",
+		"isValuable": "💎 Valuable: {{isValuable}}",
+		"valuableNote": "📝 Valuable note: {{valuableNote}}",
+		"createdAt": "📅 Created at: {{createdAt}}",
+		"updatedAt": "📅 Updated at: {{updatedAt}}",
+		"no": "❌ No",
+		"yes": "✔️ Yes",
+		"CREATED": "Tracking number added",
+		"UN_LAWFUL": "Prohibited order ❗️",
+		"Warehouse": "Arrived at the China warehouse.",
+		"Yiwu": "Shipped to Uzbekistan.",
+		"Ulugchat": "Passing through Ulugchat.",
+		"Osh": "Passing through Osh city.",
+		"Toshkent": "Arrived at the Uzbekistan warehouse.",
+		"ReProcessing": "Being re-sorted.",
+		"Approaching": "Being delivered to the pickup point.",
+		"Dropzone": "At the pickup point.",
+		"Delivered": "Delivered.",
+		"view_orders": "📦 <b>Your Orders</b> \n\n <blockquote>📝 Track all your orders in one place!</blockquote> \n <blockquote>🔍 Easily check payment status, delivery progress, and detailed information.</blockquote> \n <blockquote>💡 Need help? Our support team is always ready!</blockquote>"
+	},
+	"comment": {
+		"finishComment": "Your message has been sent successfully ✅"
+	},
+	"cashPay": {
+		"finishPay": "#{{paymentNumber}} your payment number has been sent for verification, please wait."
+	},
+	"profile": {
+		"profile": "👤 Profile:",
+		"code": "🆔 Code: <code>{{code}}</code>",
+		"name": "👤 Name: {{name}}",
+		"phoneNumber": "📱 Phone number: {{phoneNumber}}",
+		"passport": "🛂 Passport: <code>{{passportNo}}</code>",
+		"passportDates": "📅 Passport validity: {{passportEffectiveDate}} - {{passportExpireDate}}",
+		"registerAt": "📅 Registration date: {{createdAt}}"
+	},
+	"steps": {
+		"register": {
+			"companyCode": "Enter invitation code:",
+			"phoneNumber": "Enter your phone number without country code, for example: 912345678",
+			"verificationCode": "Enter SMS code:",
+			"password": "Enter your password:",
+			"name": "Enter your full name, separated by space:",
+			"passportNo": "Enter your passport number:",
+			"passportEffectiveDate": "Passport issue date (YYYY-MM-DD):",
+			"passportExpireDate": "Passport expiration date (YYYY-MM-DD):"
+		},
+		"addAddress": {
+			"name": "Your name:",
+			"phone": "Your phone number:",
+			"regionId": "Region:",
+			"districtId": "District (City):",
+			"villageId": "Neighborhood (Village):",
+			"additionalInfo": "If your phone number becomes unavailable or blocked, please enter an additional phone number to contact you: \n\nIf not, press the /skip button."
+		},
+		"ourAddress": {
+			"name": "Your name:",
+			"phone": "Your phone number:",
+			"regionId": "Please select delivery region:",
+			"districtId": "Select delivery district or city:",
+			"pvzId": "Select the nearest pickup point:"
+		},
+		"login": {
+			"username": "Enter your phone number:",
+			"password": "Enter your password:"
+		},
+		"createOrder": {
+			"trackingNumber": "🚚 Please enter tracking number:",
+			"packingType": "📦 Select packing type:",
+			"isValuable": "Valuable?",
+			"valuableNote": "Enter valuable note:",
+			"selectPvz": "Please add a pickup point."
+		},
+		"myOrders": {
+			"trackingNumber": "📦 Enter tracking number to search:",
+			"mergedTrackNumbers": "Please select tracking numbers to merge:"
+		},
+		"comment": {
+			"newComment": "Please, if you have any questions or complaints, write them here, and we will respond to you shortly."
+		},
+		"CashPay": {
+			"messeng": "Dear customer, after making the payment, please send the payment receipt for confirmation."
+		},
+		"yes": "✔️ Yes",
+		"no": "❌ No",
+		"language": {
+			"choiceLang": "Choose a language",
+			"changeLang": "Language changed successfully",
+			"uz": "🇺🇿 O'zbekcha",
+			"en": "🇺🇸 English",
+			"ru": "🇷🇺 Русский",
+			"zh": "🇨🇳 中文"
+		},
+		"mylang": {
+			"lang": "steps.mylang.lang"
+		}
+	},
+	"translate": {
+		"packingType": {
+			"ORIGINAL": "Original",
+			"UNPACKING": "Unpacking"
+		}
+	},
+	"subscription": {
+		"confirmation": "Confirmation ✅",
+		"instruction": "Read the terms and conditions and subscribe to the channel"
+	},
+	"Status": "Status",
+	"📊 Status": " Yiwu",
+	"error": "error",
+	"change": "🔄 Change",
+	"Client already exists": "This number already exists!",
+	"read ECONNRESET": "read ECONNRESET",
+	"pvz_address": "📍 Your pickup point: <code><b>{{name}}</b></code> - <code><b>{{address}}</b></code>",
+	"pvz_close": "<b>❗️Pickup point is temporarily closed.</b>",
+	"pvz_empty": "There are currently no active pickup points.",
+	"change_success": "Successfully changed!",
+	"first_start": "👋 Hello, to use the bot, please read the terms and subscribe to our channel!",
+	"Website URL error!": "Website URL error!",
+	"CREATE_ORDER": "CREATE_ORDER",
+	"SIMPLE_CREATE_ORDER": "SIMPLE_CREATE_ORDER",
+	"MY_ORDERS": "MY_ORDERS",
+	"SEARCH_ORDER": "SEARCH_ORDER",
+	"UN_PAID_ORDERS": "UN_PAID_ORDERS",
+	"PAID_ORDERS": "PAID_ORDERS",
+	"COMMENT": "COMMENT",
+	"BANK_CARD_OR_CASH": "BANK_CARD_OR_CASH",
+	"ADDRESS": "ADDRESS",
+	"CHINA_ADDRESS": "CHINA_ADDRESS",
+	"ADD_ADDRESS": "ADD_ADDRESS",
+	"PAY": "PAY",
+	"CALL_CENTER": "CALL_CENTER",
+	"OUR_ADDRESS": "OUR_ADDRESS",
+	"DELETE_TRACKING": "DELETE_TRACKING",
+	"SELECT_BRANCH": "SELECT_BRANCH",
+	"PROFILE": "PROFILE",
+	"REGISTER": "REGISTER",
+	"LOGIN": "LOGIN",
+	"LOGOUT": "LOGOUT",
+	"BACK": "BACK",
+	"CHANGE_PVZ": "CHANGE_PVZ",
+	"Try again later!": "Try again later!",
+	"merged_track_numbers": "Tracking numbers have been merged and will be delivered at the same time!",
+	"long_traking_numbers": "Due to the large number of your orders, you can check the remaining orders through 'Order Search'.",
+	"Please try again later!": "Please try again later!",
+	"Confirmation ✅": "Confirmation ✅",
+	"Reading the terms and subscribing to the channel": "Reading the terms and subscribing to the channel",
+	"Loading...": "Loading...",
+	"Merging tracking numbers": "Merging tracking numbers",
+	"Merging tracking numbers 📦": "Merging tracking numbers 📦",
+	"You have made too many attempts, your number is blocked!": "You have made too many attempts, your number is blocked!",
+	"connect ETIMEDOUT 192": {
+		"168": {
+			"68": {
+				"70": "3000"
+			}
+		}
+	},
+	"Hostname/IP does not match certificate's altnames": " Host: test-pochtabor.zhongwugou.com. is not in the cert's altnames: DNS:client.zhongwugou.com",
+	"View Orders 📦": "View Orders 📦",
+	"confirmation": "confirmation",
+	"notification": {
+		"_getMessageWarehouse": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> Your order has arrived at the China warehouse. It will soon be shipped to Uzbekistan.\n\n</blockquote>",
+		"_getMessageYiwu": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> Your order has been shipped from the China warehouse and is on its way to Uzbekistan. 🛫\n\n🏋️‍♂️ Weight: <b>{{waybillWeight}}</b> kg\n💰 Shipping cost: <b>{{price}}</b> UZS \n</blockquote>",
+		"_getMessageUlugchat": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> The estimated arrival time of your order at the Uzbekistan warehouse is 5 days. 😊\n\n🏋️‍♂️ Weight: <b>{{waybillWeight}}</b> kg\n💰 Shipping cost: <b>{{price}}</b> UZS \n</blockquote>",
+		"_getMessageOsh": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> The estimated arrival time of your order at the Uzbekistan warehouse is 2 days. 😊\n\n🏋️‍♂️ Weight: <b>{{waybillWeight}}</b> kg\n💰 Shipping cost: <b>{{price}}</b> UZS \n</blockquote>",
+		"_getMessageTashkent": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> Your order has arrived at the Tashkent warehouse. After sorting, it will be dispatched for delivery. 🛬\n\n🏋️‍♂️ Weight: <b>{{waybillWeight}}</b> kg\n💰 Shipping cost: <b>{{price}}</b> UZS \n</blockquote>",
+		"_getMessageApproaching": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> Your order is approaching its destination and will be delivered soon. 😇</blockquote>",
+		"_getMessageDropZone": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> Your order has been successfully delivered to the pickup point. You can collect it at any time. ✅</blockquote>",
+		"_getMessageDelivered": "<blockquote><b>👋 Hello, dear customer! \n\n{{trackingNumber}}</b> Your order has been successfully delivered. Thank you for using our service! 🎉</blockquote>",
+		"_getMessagePaymentPending": "<b>👋 Hello, dear customer!</b>\n\n<code>{{trackingNumber}}</code> Your order has not been dispatched due to unpaid shipping charges. Please complete the payment, and we will send your package to you!\n\n<blockquote>Please make the payment in the \"Unpaid Orders\" section, and your shipment will be sent for delivery. 🚀 </blockquote>",
+		"_getMessagePriceChanged": "<blockquote><code>{{trackingNumber}}</code> <b>The price of your shipment has been changed due to technical reasons.</b> \n\nIf you have any questions, please contact us. We are happy to assist you!\n\n{{#remark}}💡 Reason: <code>{{remark}}</code>\n{{/remark}}🏋️‍♂️ Weight: <b>{{waybillWeight}}</b> kg\n💰 Shipping cost: <b>{{price}}</b> UZS \n</blockquote>",
+		"_getMessageProhibitedItem": "<b>👋 Hello, dear customer!</b>\n\nYour order with tracking number <code>{{trackingNumber}}</code> has been identified as a prohibited item. According to our terms of service, the company does not take responsibility for this shipment.\n\n<blockquote>⚠️ Please be careful when purchasing items.</blockquote>\n"
+	},
+	"welcome": "welcome"
+}

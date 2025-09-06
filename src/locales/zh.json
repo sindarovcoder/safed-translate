@@ -1,0 +1,234 @@
+{
+	"keyboard": {
+		"CREATE_ORDER": "🚚 输入跟踪号 AUTO",
+		"SIMPLE_CREATE_ORDER": "🚚 输入跟踪号",
+		"MY_ORDERS": "📦 我的订单",
+		"SEARCH_ORDER": "🔍 订单查询",
+		"UN_PAID_ORDERS": "🔴 未付款订单",
+		"PAID_ORDERS": "🟢 已付款订单",
+		"COMMENT": "💬 反馈",
+		"BANK_CARD_OR_CASH": "💵 现金支付",
+		"ADDRESS": "🏠 我的地址",
+		"CHINA_ADDRESS": "🇨🇳 我们在中国的地址",
+		"ADD_ADDRESS": "📱 输入地址",
+		"PAY": "💵 支付",
+		"CALL_CENTER": "📞 客服中心",
+		"OUR_ADDRESS": "🚩 送货地址",
+		"DELETE_TRACKING": "✂️ 删除跟踪",
+		"SELECT_BRANCH": "🚩 选择分支机构",
+		"PROFILE": "👤 个人资料",
+		"REGISTER": "🔓 登录",
+		"LOGIN": "🔓 登录",
+		"LOGOUT": "退出 ➡️",
+		"BACK": "🔙 返回",
+		"CHANGE_PVZ": "🔄 更改",
+		"MERGED_TRACK_NUMBERS": "支付 💵",
+		"VIEW_ORDERS": "查看订单 📦"
+	},
+	"logout_successful": "退出成功！",
+	"failed_operation": "发生错误。请再次按 /start。",
+	"registration_failed": "注册失败：",
+	"verification_code_error": "短信验证码错误。请重新输入验证码：",
+	"login_successful": "登录成功！",
+	"login_failed": "登录失败！请重试",
+	"address_add_failed": "添加地址失败！请重试",
+	"waybill_not_found": "未找到运单！",
+	"welcome_p2c": "您好，欢迎使用 <b>{{botName}}</b> 机器人！\n请观看视频教程并登录。",
+	"welcome_b2c": "您好，欢迎使用 <b>{{botName}}</b> 机器人！\n请观看视频教程并登录。",
+	"welcome_logged_p2c": "您好 {{name}}，欢迎使用 <b>{{botName}}</b> 机器人。请选择以下菜单项之一！",
+	"welcome_logged_b2c": "您好 {{name}}，欢迎使用 <b>{{botName}}</b> 机器人。请选择以下菜单项之一！",
+	"passport_no_error": "护照号码输入错误。请按示例输入。例如：AC1234567",
+	"company_code_error": "邀请码输入错误。请重新输入3位数的邀请码。",
+	"trackingNumber_error": "跟踪号输入错误。请输入由字母和数字组成的跟踪号。",
+	"phone_number_error": "电话号码输入错误。请重新输入。例如：912345678",
+	"main_messeng": "您已返回主页，请选择所需部分。",
+	"error_message": "输入了无效命令。请再次按 /start。",
+	"add": "➕ 添加",
+	"address": {
+		"createdSuccess": "注册成功！",
+		"defaultAddress": "🏠 默认地址",
+		"name": "👤 姓名：",
+		"phone": "📱 电话：",
+		"address": "🏠 地址：",
+		"createdAt": "📅 创建时间：",
+		"notFound": "未找到地址！"
+	},
+	"auth": {
+		"registerSuccess": "注册成功！",
+		"loginSuccess": "登录成功！",
+		"profile": "👤 个人资料：",
+		"code": "🆔 代码：<code>{{code}}</code>",
+		"name": "👤 姓名：{{name}}",
+		"phoneNumber": "📱 电话号码：{{phoneNumber}}",
+		"passport": "🛂 护照：<code>{{passportNo}}</code>",
+		"passportDates": "📅 护照有效期：{{passportEffectiveDate}} - {{passportExpireDate}}",
+		"registerAt": "📅 注册时间：{{createdAt}}"
+	},
+	"order": {
+		"createSuccess": "订单创建成功！跟踪号：{{trackingNumbers}}",
+		"notFound": "未找到订单！",
+		"trackingNumber": "📦 跟踪号：<b><code>{{trackingNumber}}</code></b>",
+		"status": "📋 状态：<b>{{status}}</b>",
+		"receiver": "👤 收件人：{{name}}",
+		"totalAmount": "💰 总金额：<b>{{total}}</b> UZS",
+		"weight": "🏋️‍♂️ 重量：<b>{{weight}}</b> kg",
+		"freight": "💰 运费：<b>{{freight}}</b> UZS",
+		"onlyWeight": "🏋️‍♂️ 重量：0",
+		"onlyFreight": "💰 运费：0",
+		"packingType": "📦 包装类型：{{packingType}}",
+		"isValuable": "💎 贵重物品：{{isValuable}}",
+		"valuableNote": "📝 贵重物品备注：{{valuableNote}}",
+		"createdAt": "📅 创建时间：{{createdAt}}",
+		"updatedAt": "📅 更新时间：{{updatedAt}}",
+		"no": "❌ 否",
+		"yes": "✔️ 是",
+		"CREATED": "已添加跟踪号",
+		"UN_LAWFUL": "禁止的订单 ❗️",
+		"Warehouse": "已到达中国仓库。",
+		"Yiwu": "已发往乌兹别克斯坦。",
+		"Ulugchat": "正在通过乌鲁克恰特。",
+		"Osh": "正在通过奥什市。",
+		"Toshkent": "已到达乌兹别克斯坦仓库。",
+		"ReProcessing": "重新分类处理中。",
+		"Approaching": "正在配送至交付点。",
+		"Dropzone": "已到达交付点。",
+		"Delivered": "已送达。",
+		"view_orders": "📦 <b>您的订单</b> \n\n <blockquote>📝 在一个地方跟踪您的所有订单！</blockquote> \n <blockquote>🔍 轻松查看付款状态、配送进度和详细信息。</blockquote> \n <blockquote>💡 需要帮助？我们的客服团队随时为您提供支持！</blockquote>"
+	},
+	"comment": {
+		"finishComment": "您的消息已成功发送 ✅"
+	},
+	"cashPay": {
+		"finishPay": "#{{paymentNumber}} 您的付款编号已发送进行验证，请稍候。"
+	},
+	"profile": {
+		"profile": "👤 个人资料：",
+		"code": "🆔 代码：<code>{{code}}</code>",
+		"name": "👤 姓名：{{name}}",
+		"phoneNumber": "📱 电话号码：{{phoneNumber}}",
+		"passport": "🛂 护照：<code>{{passportNo}}</code>",
+		"passportDates": "📅 护照有效期：{{passportEffectiveDate}} - {{passportExpireDate}}",
+		"registerAt": "📅 注册时间：{{createdAt}}"
+	},
+	"steps": {
+		"register": {
+			"companyCode": "输入邀请码：",
+			"phoneNumber": "输入您的电话号码，无需国家代码，例如：912345678",
+			"verificationCode": "输入短信验证码：",
+			"password": "输入您的密码：",
+			"name": "输入您的全名，用空格分隔：",
+			"passportNo": "输入您的护照号码：",
+			"passportEffectiveDate": "护照签发日期 (YYYY-MM-DD)：",
+			"passportExpireDate": "护照到期日期 (YYYY-MM-DD)："
+		},
+		"addAddress": {
+			"name": "您的姓名：",
+			"phone": "您的电话号码：",
+			"regionId": "地区：",
+			"districtId": "区（城市）：",
+			"villageId": "社区（村庄）：",
+			"additionalInfo": "如果您的电话号码不可用或被屏蔽，请输入备用电话号码以便联系您：\n\n如果没有，请按 /skip 按钮。"
+		},
+		"ourAddress": {
+			"name": "您的姓名：",
+			"phone": "您的电话号码：",
+			"regionId": "请选择送货地区：",
+			"districtId": "选择送货区或城市：",
+			"pvzId": "选择最近的取货点："
+		},
+		"login": {
+			"username": "输入您的电话号码：",
+			"password": "输入您的密码："
+		},
+		"createOrder": {
+			"trackingNumber": "🚚 请输入跟踪号：",
+			"packingType": "📦 选择包装类型：",
+			"isValuable": "贵重物品？",
+			"valuableNote": "输入贵重物品备注：",
+			"selectPvz": "请添加取货点。"
+		},
+		"myOrders": {
+			"trackingNumber": "📦 输入跟踪号进行搜索：",
+			"mergedTrackNumbers": "请选择要合并的跟踪号："
+		},
+		"comment": {
+			"newComment": "请在此处写下您的问题或投诉，我们将尽快回复您。"
+		},
+		"CashPay": {
+			"messeng": "尊敬的客户，付款后请发送付款收据以确认。"
+		},
+		"language": {
+			"choiceLang": "請選擇語言",
+			"changeLang": "语言已成功更改",
+			"uz": "🇺🇿 O‘zbekcha",
+			"en": "🇺🇸 English",
+			"ru": "🇷🇺 Русский",
+			"zh": "🇨🇳 中文"
+		},
+		"yes": "✔️ 是",
+		"no": "❌ 否"
+	},
+	"translate": {
+		"packingType": {
+			"ORIGINAL": "原包装",
+			"UNPACKING": "拆包"
+		}
+	},
+	"subscription": {
+		"confirmation": "確認✅",
+		"instruction": "閱讀條款和條件並訂閱頻道"
+	},
+	"Status": "状态",
+	"📊 Status": " 义乌",
+	"error": "错误",
+	"change": "🔄 更改",
+	"Client already exists": "此号码已存在！",
+	"🔙 返回": "🔙 返回",
+	"read ECONNRESET": "read ECONNRESET",
+	"pvz_address": "📍 您的取货点：<code><b>{{name}}</b></code> - <code><b>{{address}}</b></code>",
+	"pvz_close": "<b>❗️取货点暂时关闭。</b>",
+	"pvz_empty": "目前没有活跃的取货点。",
+	"change_success": "更改成功！",
+	"first_start": "👋 您好，要使用机器人，请阅读条款并订阅我们的频道！",
+	"Website URL error!": "网站URL错误！",
+	"CREATE_ORDER": "CREATE_ORDER",
+	"SIMPLE_CREATE_ORDER": "SIMPLE_CREATE_ORDER",
+	"MY_ORDERS": "MY_ORDERS",
+	"SEARCH_ORDER": "SEARCH_ORDER",
+	"UN_PAID_ORDERS": "UN_PAID_ORDERS",
+	"PAID_ORDERS": "PAID_ORDERS",
+	"COMMENT": "COMMENT",
+	"BANK_CARD_OR_CASH": "BANK_CARD_OR_CASH",
+	"ADDRESS": "ADDRESS",
+	"CHINA_ADDRESS": "CHINA_ADDRESS",
+	"ADD_ADDRESS": "ADD_ADDRESS",
+	"PAY": "PAY",
+	"CALL_CENTER": "CALL_CENTER",
+	"OUR_ADDRESS": "OUR_ADDRESS",
+	"DELETE_TRACKING": "DELETE_TRACKING",
+	"SELECT_BRANCH": "SELECT_BRANCH",
+	"PROFILE": "PROFILE",
+	"REGISTER": "REGISTER",
+	"LOGIN": "LOGIN",
+	"LOGOUT": "LOGOUT",
+	"BACK": "BACK",
+	"CHANGE_PVZ": "CHANGE_PVZ",
+	"merged_track_numbers": "跟踪号已合并，将同时发货！",
+	"long_traking_numbers": "由于您的订单数量较多，您可以通过“订单查询”查看剩余订单。",
+	"查看订单 📦": "查看订单 📦",
+	"notification": {
+		"_getMessageWarehouse": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单已到达中国仓库。 它很快将被运往乌兹别克斯坦。\n\n</blockquote>",
+		"_getMessageYiwu": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单已从中国仓库发出，正在运往乌兹别克斯坦。 🛫\n\n🏋️‍♂️ 重量: <b>{{waybillWeight}}</b> 公斤\n💰 运费: <b>{{price}}</b> 乌兹别克斯坦苏姆 \n</blockquote>",
+		"_getMessageUlugchat": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单预计将在 5 天后到达乌兹别克斯坦仓库。 😊\n\n🏋️‍♂️ 重量: <b>{{waybillWeight}}</b> 公斤\n💰 运费: <b>{{price}}</b> 乌兹别克斯坦苏姆 \n</blockquote>",
+		"_getMessageOsh": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单预计将在 2 天后到达乌兹别克斯坦仓库。 😊\n\n🏋️‍♂️ 重量: <b>{{waybillWeight}}</b> 公斤\n💰 运费: <b>{{price}}</b> 乌兹别克斯坦苏姆 \n</blockquote>",
+		"_getMessageTashkent": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单已到达塔什干仓库。 在完成分拣后，它将被发送进行配送。 🛬\n\n🏋️‍♂️ 重量: <b>{{waybillWeight}}</b> 公斤\n💰 运费: <b>{{price}}</b> 乌兹别克斯坦苏姆 \n</blockquote>",
+		"_getMessageApproaching": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单即将到达目的地，很快就会送达。 😇</blockquote>",
+		"_getMessageDropZone": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单已成功送达自提点。 您可以随时领取。 ✅</blockquote>",
+		"_getMessageDelivered": "<blockquote><b>👋 你好，尊敬的客户！\n\n{{trackingNumber}}</b> 您的订单已成功送达。 感谢您使用我们的服务！ 🎉</blockquote>",
+		"_getMessagePaymentPending": "<b>👋 你好，尊敬的客户！</b>\n\n<code>{{trackingNumber}}</code> 由于运费未支付，您的订单尚未发出。 请完成付款，我们将尽快将您的包裹寄出！\n\n<blockquote>请在“未支付订单”部分完成支付，我们将安排您的订单配送。 🚀 </blockquote>",
+		"_getMessagePriceChanged": "<blockquote><code>{{trackingNumber}}</code> <b>由于技术原因，您的订单价格已更改。</b> \n\n如果您有任何问题，请联系我们。 我们很乐意为您提供帮助！\n\n{{#remark}}💡 原因: <code>{{remark}}</code>\n{{/remark}}🏋️‍♂️ 重量: <b>{{waybillWeight}}</b> 公斤\n💰 运费: <b>{{price}}</b> 乌兹别克斯坦苏姆 \n</blockquote>",
+		"_getMessageProhibitedItem": "<b>👋 你好，尊敬的客户！</b>\n\n您的订单 <code>{{trackingNumber}}</code> 被识别为违禁品。 根据我们的服务条款，公司对该货物不承担责任。\n\n<blockquote>⚠️ 购买商品时请注意。</blockquote>\n"
+	}
+	
+	  
+}

@@ -1,0 +1,35 @@
+{
+  "name": "safed-translate-bot",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --inspect --trace-warnings src/index.js",
+    "start": "node --inspect --trace-warnings src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ali-oss": "^6.20.0",
+    "axios": "^1.8.4",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "form-data": "^4.0.1",
+    "fs": "^0.0.1-security",
+    "https-proxy-agent": "^7.0.6",
+    "i18n": "^0.15.1",
+    "lodash": "^4.17.21",
+    "mammoth": "^1.9.0",
+    "moment": "^2.30.1",
+    "node-fetch": "^3.3.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemon": "^3.1.4",
+    "path": "^0.12.7",
+    "pdfjs-dist": "^2.6.347",
+    "tesseract.js": "^6.0.0",
+    "xlsx": "^0.18.5"
+  }
+}
