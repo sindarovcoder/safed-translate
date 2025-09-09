@@ -10,7 +10,6 @@ const bot = require("./bot");
 
 const express = require("express");
 
-
 const app = express();
 app.use(express.json());
 
@@ -22,6 +21,8 @@ app.post(`/webhook/${TOKEN}`, (req, res) => {
     bot.processUpdate(req.body);
     res.sendStatus(200);
 });
+
+// ss
 
 // Endpoint to get server time (ret time)
 app.get('/ret-time', (req, res) => {
