@@ -8,6 +8,26 @@ const { callbackQuery } = require("../handlers/callbackHandler");
 
 const bot = require("./bot");
 
+const express = require("express");
+
+
+const app = express();
+app.use(express.json());
+
+const TOKEN = process.env.BOT_TOKEN;
+
+bot.setWebHook(`${process.env.RENDER_EXTERNAL_URL}/webhook/${TOKEN}`);
+
+app.post(`/webhook/${TOKEN}`, (req, res) => {
+    bot.processUpdate(req.body);
+    res.sendStatus(200);
+});
+
+// Endpoint to get server time (ret time)
+app.get('/ret-time', (req, res) => {
+    res.json({ time: new Date().toISOString() });
+});
+
 bot.setMyCommands(botCommands);
 
 bot.on("photo", async (msg) => handleMedia(bot, msg, "photo"));
