@@ -13,9 +13,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const TOKEN = process.env.BOT_TOKEN;
+const TOKEN = process.env.TOKEN;
+const RENDER_EXTERNAL_URL = process.env.RENDER_EXTERNAL_URL;
 
-bot.setWebHook(`https://safed-translate.onrender.com/webhook/8070989669:AAEa91x-bPjWhuaihYzUPa35pVfJ7Ia2ELU`);
+bot.setWebHook(`${RENDER_EXTERNAL_URL}/webhook/${TOKEN}`);
 
 app.post(`/webhook/${TOKEN}`, (req, res) => {
     console.log("Telegram update:", JSON.stringify(req.body, null, 2));
