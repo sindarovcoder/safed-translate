@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: safed-translate-bot
+    env: node
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm run start:dev"
+    plan: free
+    branch: main
+    autoDeploy: true
+    previewDeploys:
+      enabled: true
