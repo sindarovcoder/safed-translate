@@ -6,7 +6,13 @@ const TOKEN = process.env.BOT_TOKEN;
 
 
 bot.setWebHook(`${process.env.RENDER_EXTERNAL_URL}/webhook/${TOKEN}`);
+
 app.post(`/webhook/${TOKEN}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
+app.post(`/webhook`, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
