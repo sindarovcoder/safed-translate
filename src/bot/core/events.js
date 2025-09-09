@@ -28,6 +28,12 @@ app.get('/ret-time', (_, res) => {
     res.json({ time: new Date().toISOString() });
 });
 
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
+    console.log(`Bot server running on port ${PORT}`);
+});
+
 bot.setMyCommands(botCommands);
 
 bot.on("photo", async (msg) => handleMedia(bot, msg, "photo"));
